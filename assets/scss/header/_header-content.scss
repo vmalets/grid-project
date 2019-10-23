@@ -1,20 +1,70 @@
-  .header-content {
-      position: relative;
-      &__title {
-          text-align: center;
-          letter-spacing: 0.08em;
-          @include lg-min {
-              margin: 0 0 53px;
+      .header-content {
+          position: relative;
+          &__title {
+              text-align: center;
+              letter-spacing: 0.08em;
+              @include lg-min {
+                  margin: 0 0 53px;
+              }
+              @include lg {
+                  margin: 0 0 43px;
+              }
           }
-          @include lg {
-              margin: 0 0 43px;
+          &__container {
+              display: grid;
+              max-width: $ul;
+              margin: auto;
+              padding-right: $gap;
+              padding-left: $gap;
+          }
+          &__buttons {
+              display: flex;
+              justify-content: center;
+              @include sm {
+                  flex-direction: column;
+                  align-items: center;
+              }
+              .btn {
+                  @include lg-min {
+                      min-width: 250px;
+                      &:not(:last-of-type) {
+                          margin-right: $gap;
+                      }
+                  }
+                  @include lg-md {
+                      min-width: 200px;
+                      height: 50px;
+                      letter-spacing: 0.1em;
+                      font-size: 1rem;
+                      padding-top: 14px;
+                      padding-bottom: 14px;
+                      &:not(:last-of-type) {
+                          margin-right: $gap;
+                      }
+                  }
+                  @include md-sm {
+                      min-width: 170px;
+                      height: 40px;
+                      letter-spacing: 0.05em;
+                      font-size: 1rem;
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                      &:not(:last-of-type) {
+                          margin-right: $gap;
+                      }
+                  }
+                  @include sm {
+                      min-width: 170px;
+                      height: 40px;
+                      letter-spacing: 0.05em;
+                      font-size: 1rem;
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                      &:not(:last-of-type) {
+                          margin-bottom: $gap;
+                          margin-right: 0;
+                      }
+                  }
+              }
           }
       }
-      &__buttons {
-          display: flex;
-          justify-content: center;
-          .btn:not(:last-of-type) {
-              margin-right: $gap;
-          }
-      }
-  }

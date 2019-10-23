@@ -30,6 +30,12 @@
             border-color: $color-light;
             background-color: $color-accent;
         }
+        @include sm-min {
+            min-width: 100%;
+        }
+        @include sm {
+            width: 100%;
+        }
     }
 }
 
