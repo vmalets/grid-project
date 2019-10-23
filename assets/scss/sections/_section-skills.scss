@@ -1,0 +1,129 @@
+    .skills {
+        @include sm-min {
+            padding: ($gap / 2) ($gap / 2) ($gap * 2);
+        }
+        @include sm {
+            padding: $gap;
+        }
+        &__container {
+            display: grid;
+            padding-bottom: $gap;
+            @include sm-min {
+                grid-gap: $gap / 2;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+            }
+            @include lg-md {
+                grid-gap: $gap / 2;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+            }
+            @include md-sm {
+                grid-gap: $gap / 2;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+            }
+            @include sm {
+                grid-gap: $gap;
+                grid-template-columns: 1fr;
+                grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+            }
+        }
+        &__button {
+            display: flex;
+            justify-content: center;
+            @include sm-min {
+                min-width: 350px;
+            }
+        }
+    }
+    
+    .btn-accent {
+        border-color: $color-primary;
+        background-color: rgba($color-primary, 0.8);
+        @include sm-min {
+            min-width: 350px;
+        }
+        @include sm {
+            width: 100%;
+        }
+    }
+    
+    .skill-item {
+        overflow: hidden;
+        position: relative;
+        background-color: $color-primary;
+        min-height: calc(33.33vh - 13px);
+        &:nth-of-type(1) {
+            grid-area: a1;
+        }
+        &:nth-of-type(2) {
+            grid-area: a2;
+        }
+        &:nth-of-type(3) {
+            grid-area: a3;
+        }
+        &:nth-of-type(4) {
+            grid-area: a4;
+        }
+        &:nth-of-type(5) {
+            grid-area: a5;
+        }
+        &:nth-of-type(6) {
+            grid-area: a6;
+        }
+        &:nth-of-type(7) {
+            grid-area: a7;
+        }
+        &:nth-of-type(8) {
+            grid-area: a8;
+        }
+        &:nth-of-type(9) {
+            grid-area: a9;
+        }
+        &__overlay {
+            @include abs-position;
+            z-index: 1;
+            background-color: $color-primary;
+            opacity: 0.8;
+            transition: opacity 0.5s;
+        }
+        &__image {
+            @include abs-position;
+            background-size: cover;
+            background-position: 50% 50%;
+            transition: transform 0.5s;
+        }
+        &__title {
+            @include abs-position;
+            margin: 0;
+            z-index: 2;
+            letter-spacing: 0.1em;
+            @include md-min {
+                font-size: 1.25rem;
+            }
+            @include md {
+                font-size: 1.125rem;
+            }
+        }
+        &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 100%;
+            width: 100%;
+            transition: color 0.5s;
+        }
+        &:hover {
+            .skill-item__overlay {
+                opacity: 0.95 !important;
+            }
+            .skill-item__image {
+                transform: scale(1.1);
+            }
+            .skill-item__link {
+                color: $color-accent;
+            }
+        }
+    }

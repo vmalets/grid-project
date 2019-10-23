@@ -1,0 +1,20 @@
+  .header-content {
+      position: relative;
+      &__title {
+          text-align: center;
+          letter-spacing: 0.08em;
+          @include lg-min {
+              margin: 0 0 53px;
+          }
+          @include lg {
+              margin: 0 0 43px;
+          }
+      }
+      &__buttons {
+          display: flex;
+          justify-content: center;
+          .btn:not(:last-of-type) {
+              margin-right: $gap;
+          }
+      }
+  }
