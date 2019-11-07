@@ -1,83 +1,115 @@
-.about {
-    letter-spacing: 0.055em;
+.about
+{
+    letter-spacing: .055em;
+
     background-color: $color-gray-light;
-    h2 {
-        margin-top: 0;
-    }
-    @include lg-min {
+
+    @include lg-min
+    {
         padding-top: $gap * 5;
         padding-bottom: $gap * 5;
     }
-    @include lg-md {
+    @include lg-md
+    {
         padding-top: $gap * 4;
         padding-bottom: $gap * 4;
     }
-    @include md {
+    @include md
+    {
         padding-top: $gap * 3;
         padding-bottom: $gap * 3;
     }
-    &__container {
+    h2
+    {
+        margin-top: 0;
+    }
+    &__container
+    {
         display: grid;
+
         max-width: $ul;
         margin: auto;
         padding-right: $gap;
         padding-left: $gap;
-        @include lg-min {
+
+        @include lg-min
+        {
             grid-gap: $gap * 5;
             grid-template-columns: 1fr 271px;
         }
-        @include lg-md {
+        @include lg-md
+        {
             grid-gap: $gap * 2;
             grid-template-columns: 1fr 271px;
         }
-        @include md-sm {
+        @include md-sm
+        {
             grid-gap: $gap;
             grid-template-columns: 1fr 236px;
         }
-        @include sm {
+        @include sm
+        {
             grid-gap: $gap;
             grid-template-columns: 1fr;
         }
     }
-    &__content {
-        p {
-            @include lg-min {
+    &__content
+    {
+        p
+        {
+            @include lg-min
+            {
                 font-size: 1.125rem;
             }
-            &:first-of-type {
+            &:first-of-type
+            {
                 position: relative;
+
                 margin-top: -5px;
-                &::after {
+                &::after
+                {
                     position: absolute;
                     top: 0;
+
                     width: 2px;
                     height: 200px;
-                    content: "";
-                    background-color: rgba($color-gray, 0.1);
-                    @include lg-min {
+
+                    content: '';
+
+                    background-color: rgba($color-gray, .1);
+
+                    @include lg-min
+                    {
                         right: -$gap * 2.5;
                     }
-                    @include lg-md {
+                    @include lg-md
+                    {
                         right: -$gap;
                     }
-                    @include md-sm {
+                    @include md-sm
+                    {
                         right: -$gap / 2;
                     }
-                    @include sm {
+                    @include sm
+                    {
                         display: none;
                     }
                 }
             }
-            &:last-of-type {
+            &:last-of-type
+            {
                 margin: 0;
             }
         }
     }
-    &__image {
+    &__image
+    {
         display: grid;
+
         align-content: center;
         justify-items: center;
-        img {
+        img
+        {
             max-width: 100%;
             max-height: 480px;
             margin-top: $gap;

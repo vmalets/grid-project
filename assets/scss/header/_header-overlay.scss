@@ -1,5 +1,7 @@
-.header-overlay {
-    @include abs-position;
+.header-overlay
+{
+    opacity: .8;
     background-color: $color-primary;
-    opacity: 0.8;
+
+    @include abs-position;
 }
